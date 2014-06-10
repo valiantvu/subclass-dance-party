@@ -3,7 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background: url("http://img.myconfinedspace.com/wp-content/uploads/2011/05/SPACE-CAT.jpg");
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -21,7 +21,12 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
+  border:10px;
   border-radius:10px;
   position:absolute;
+}
+
+img{
+  height: 50px;
+  width: 50px;
 }

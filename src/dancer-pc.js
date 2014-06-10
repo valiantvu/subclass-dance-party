@@ -1,5 +1,5 @@
 var Dancer = function(top, left, timeBetweenSteps) {
-  this.$node = $('<span class="dancer"></span>');
+  this.$node = $('<span class="dancer"><img src="http://www.tomstuder.com/wp-content/uploads/2012/07/dog-011.png"/></span>');
   this.setPosition(top, left);
   this.step();
   this._timeBetweenSteps = timeBetweenSteps;
