@@ -6,6 +6,7 @@ body{
   background: url("http://img.myconfinedspace.com/wp-content/uploads/2011/05/SPACE-CAT.jpg");
   font-size: 18px;
   background-size: cover;
+  overflow: hidden;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;

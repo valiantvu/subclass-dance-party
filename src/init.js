@@ -23,11 +23,29 @@ $(document).ready(function(){
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      ($("body").height() + 50) * Math.random() - 50,
-      ($("body").width() - 20) * Math.random() + 20,
+      ($("body").height()) * Math.random(),
+      ($("body").width()) * Math.random(),
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
   });
+
+  $(".lineUpButton").on("click", function(event){
+    // var lineUpFunctionName = $(this).data("lineUp-function-name");
+
+    // var lineUpFunction = window[lineUpFunctionName];
+    // console.log('here');
+    // Select all dancers and change their top property
+    for (var i = 0; i < window.dancers.length; i++) {
+      console.dir(window.dancers);
+      window.dancers[i].lineUp();
+    }
+
+
+
+
+  });
+
 });
 

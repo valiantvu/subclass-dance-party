@@ -8,6 +8,10 @@ var TravDancer = function(top, left, timeBetweenSteps){
 
 TravDancer.prototype = Object.create(BlinkyDancer.prototype);
 
+TravDancer.prototype.lineUp = function(){
+  this.setPosition($('body').height()*0.35);
+};
+
 TravDancer.prototype.step = function(){
   BlinkyDancer.prototype.step.call(this);
   if(this.counter === 5){

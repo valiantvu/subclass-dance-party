@@ -8,7 +8,9 @@ BlinkyDancer.prototype = Object.create(Dancer.prototype);
 
 BlinkyDancer.prototype.constructor = BlinkyDancer;
 
-
+BlinkyDancer.prototype.lineUp = function() {
+  this.setPosition($('body').height()*0.30);
+};
 
 BlinkyDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
