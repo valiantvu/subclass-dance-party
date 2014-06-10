@@ -7,6 +7,8 @@ body{
   font-size: 18px;
   background-size: cover;
   overflow: hidden;
+  /*cursor: url('src/nat927.ani'), default;*/
+  z-index: -1;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -26,9 +28,14 @@ body, a:link, a:visited, a:active{
   border:10px;
   border-radius:10px;
   position:absolute;
+  z-index: 100;
 }
 
 img{
   height: 50px;
   width: 50px;
 }
+
+/* Start http://www.cursors-4u.com */
+/*body, a:hover {cursor: url(http://cur.cursors-4u.net/nature/nat-10/nat927.ani), url(http://cur.cursors-4u.net/nature/nat-10/nat927.png), progress !important;}*/
+/* End http://www.cursors-4u.com */

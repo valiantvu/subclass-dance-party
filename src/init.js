@@ -41,11 +41,12 @@ $(document).ready(function(){
       console.dir(window.dancers);
       window.dancers[i].lineUp();
     }
-
-
-
-
   });
 
+  $("span").on('click', function() {
+    console.log('hi');
+
+    // innerHTML('<img src="http://www.iconshock.com/img_jpg/SHINE7/communications/jpg/256/rainbow_icon.jpg"/>');
+  });
 });
 

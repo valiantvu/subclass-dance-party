@@ -15,5 +15,4 @@ BlinkyDancer.prototype.lineUp = function() {
 BlinkyDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
   this.$node.toggle();
-  console.dir(this);
 };

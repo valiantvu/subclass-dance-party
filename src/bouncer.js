@@ -4,6 +4,8 @@ var Bouncer = function(top, left, timeBetweenSteps) {
   this.counter = 0;
   this.maxHeight = top;
   Dancer.call(this, top, left, timeBetweenSteps);
+  this.$node = $('<span class="dancer"><a><img src="http://www.tomstuder.com/wp-content/uploads/2012/07/dog-011.png"/></a></span>');
+  this.setPosition(top, left);
 };
 
 Bouncer.prototype = Object.create(Dancer.prototype);
