@@ -1,6 +1,6 @@
 var TravDancer = function(top, left, timeBetweenSteps){
   BlinkyDancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<span class="dancer"><img src="http://iconbug.com/data/53/256/b88e0b8122a6383eebe488006694720d.png"/></span>');
+  this.$node = $('<span class="dancer"><img src="src/mouse.gif"/></span>');
   this.setPosition(top, left);
   this.counter = 85;
   this.width = $('body').width();

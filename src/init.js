@@ -32,21 +32,56 @@ $(document).ready(function(){
   });
 
   $(".lineUpButton").on("click", function(event){
-    // var lineUpFunctionName = $(this).data("lineUp-function-name");
-
-    // var lineUpFunction = window[lineUpFunctionName];
-    // console.log('here');
-    // Select all dancers and change their top property
     for (var i = 0; i < window.dancers.length; i++) {
-      console.dir(window.dancers);
       window.dancers[i].lineUp();
     }
   });
 
-  $("span").on('click', function() {
-    console.log('hi');
+  $('body').on('dblclick', '.dancer', function() {
 
-    // innerHTML('<img src="http://www.iconshock.com/img_jpg/SHINE7/communications/jpg/256/rainbow_icon.jpg"/>');
+    this.remove();
+    var top = this.style.top;
+    var left = this.style.left;
+
+    var explosion = $('<span class="explosion"><img src="src/explosion.gif"/></span>');
+    var audioExplosion = $('<audio autoplay class="audioExplosion"><source src="src/explosion.mp3" type="audio/mpeg"></audio>');
+    explosion[0].style.top = top;
+    explosion[0].style.left = left;
+    $('body').append(explosion);
+    $('body').append(audioExplosion);
+
+    setTimeout(function() {
+      var explosions = $('.explosion');
+      var audioExplosions = $('.audioExplosion');
+      for (var key in explosions) {
+        explosions.remove();
+      }
+    }, 2000);
   });
+
+  $('body').on('click', '.dancer', function(){
+
+    var top = parseInt(this.style.top.slice(0, this.style.top.length - 2));
+    var left = parseInt(this.style.left.slice(0, this.style.left.length - 2));
+    var distances = [];
+
+    for( var i=0; i<window.dancers.length; i++ ){
+      var compare = window.dancers[i].$node.position();
+      var distance = Math.sqrt(Math.pow(top-compare.top, 2) + Math.pow(left-compare.left, 2));
+      distances.push(distance);
+    }
+
+    var closest = [5000];
+    for(var i=0; i<distances.length; i++){
+      if( (distance[i] < closest[0]) && (distance[i] > 5)){
+        closest = [distance[i], i];
+      }
+    }
+
+
+
+    console.dir(closest);
+  });
+
 });
 
