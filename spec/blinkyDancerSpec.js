@@ -33,3 +33,52 @@ describe("blinkyDancer", function() {
     });
   });
 });
+
+describe("Dancer", function() {
+  var dancer;
+  var timeBetweenSteps = 100;
+  var clock;
+
+  beforeEach(function() {
+    clock = sinon.useFakeTimers();
+    dancer = new Dancer(10, 20, timeBetweenSteps);
+  });
+
+  it("should have a jQuery $node object", function(){
+    expect(dancer.$node).to.be.an.instanceof(jQuery);
+  });
+
+  it("should have a setPosition function", function() {
+    dancer.setPosition();
+    expect(dancer.$node[0].style.top).to.be.equal("10px");
+    expect(dancer.$node[0].style.left).to.be.equal("20px");
+  });
+});
+
+describe("BlinkyDancer", function() {
+  var blinkydancer;
+  var timeBetweenSteps = 100;
+  var clock;
+
+  beforeEach(function() {
+    clock = sinon.useFakeTimers();
+    blinkydancer = new BlinkyDancer(10, 20, timeBetweenSteps);
+  });
+
+  it("should have a jQuery $node object", function(){
+    expect(blinkydancer.$node).to.be.an.instanceof(jQuery);
+  });
+
+  it("should have a setPosition function", function() {
+    blinkydancer.setPosition();
+    expect(blinkydancer.$node[0].style.top).to.be.equal("10px");
+    expect(blinkydancer.$node[0].style.left).to.be.equal("20px");
+  });
+
+  it("should have a step function that makes its node blink", function() {
+    sinon.spy(blinkydancer.$node, 'toggle');
+    blinkydancer.step();
+    expect(blinkydancer.$node.toggle.called).to.be.true;
+  });
+
+});
